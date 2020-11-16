@@ -8,8 +8,7 @@
 
 ### Environment Variables
 
-- Change environment variables in `.flaskenv` and `.env` files
-- `.flaskenv` should be used for public variables, such as `FLASK_APP`, while `.env` should be used for private variables, such as API keys
+- Change environment variables in `.env` file
 - `.env` should never be commited
 
 ### Packages

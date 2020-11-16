@@ -1,0 +1,17 @@
+{
+  "name": "sudoku-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serverless offline --httpPort 5000 --stage local",
+    "deploy:dev": "serverless deploy --stage dev",
+    "deploy:prod": "serverless deploy --stage prod",
+    "remove:dev": "serverless remove --stage dev",
+    "remove:prod": "serverless remove --stage prod",
+    "run:hello": "serverless invoke local --function hello"
+  },
+  "devDependencies": {
+    "serverless-offline": "^6.8.0",
+    "serverless-python-requirements": "^5.1.0"
+  }
+}
