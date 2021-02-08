@@ -8,7 +8,9 @@
     "deploy:prod": "serverless deploy --stage prod",
     "remove:dev": "serverless remove --stage dev",
     "remove:prod": "serverless remove --stage prod",
-    "run:hello": "serverless invoke local --function hello"
+    "test:scan-sudoku": "python test/scan_sudoku_test.py",
+    "invoke:scan-sudoku": "serverless invoke local --function scan-sudoku --path test/assets/sudoku.json"
+    
   },
   "devDependencies": {
     "serverless-offline": "^6.8.0",
