@@ -1,9 +1,17 @@
-service: sudoku-server
+service: sudoku-scanner
 
 provider:
   name: aws
   runtime: python3.8
   region: us-east-1
+  apiGateway:
+    binaryMediaTypes:
+      - "*/*"
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "rekognition:DetectText"
+      Resource: "*"
 
 package:
   exclude:
@@ -14,9 +22,9 @@ plugins:
   - serverless-python-requirements
 
 functions:
-  hello:
-    handler: handler.hello
+  scan-sudoku:
+    handler: handler.scan_sudoku
     events:
       - http:
-          path: /
-          method: get
+          path: /scan-sudoku
+          method: POST
